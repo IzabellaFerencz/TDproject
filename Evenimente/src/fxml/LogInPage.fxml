@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <ScrollPane layoutX="-1064.0" layoutY="-638.0" prefHeight="484.0" prefWidth="557.0">
+         <content>
+            <Pane prefHeight="483.0" prefWidth="725.0">
+               <children>
+                  <Pane layoutX="33.0" layoutY="11.0" prefHeight="396.0" prefWidth="439.0">
+                     <children>
+                        <Label layoutX="80.0" layoutY="131.0" text="Username" textAlignment="CENTER" />
+                        <TextField layoutX="173.0" layoutY="126.0" />
+                        <Label layoutX="82.0" layoutY="178.0" text="Password" />
+                        <PasswordField layoutX="173.0" layoutY="173.0" />
+                        <Button layoutX="297.0" layoutY="247.0" mnemonicParsing="false" text="Log In" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

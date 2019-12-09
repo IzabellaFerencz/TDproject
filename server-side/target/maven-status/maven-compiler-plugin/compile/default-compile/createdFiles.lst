@@ -1,0 +1,11 @@
+model\Invitation.class
+application\Main.class
+model\Role.class
+dao\EventParticipantDAO.class
+model\EventParticipant.class
+dao\UserDAO.class
+model\UserRole.class
+dao\BasicDAO.class
+service\UserService.class
+model\Event.class
+model\User.class
