@@ -4,36 +4,33 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-public class ClientMain {
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class ClientMain extends Application {
 
 	public static String serverResponse;
 
-	public static void main(String[] args) {
-
-		String user = "victor";
-		String pass = "victor5556";
-
-		String concat = user + " " + pass;
-
-		ExecutorService es = Executors.newCachedThreadPool();
-
-		System.out.println("Sending command to server");
-		SocketClientCallable commandWithSocket = new SocketClientCallable(
-				"localhost", 9001, "login", concat);
-
-		Future<String> response = es.submit(commandWithSocket);
+	@Override
+	public void start(Stage primaryStage) {
 		try {
-			serverResponse = response.get();
+			Parent root = FXMLLoader.load(getClass().getResource("../fxml/LogInPage.fxml"));
 
-			System.out.println(serverResponse);
+			Scene scene = new Scene(root, 400, 400);
 
+			primaryStage.setScene(scene);
+			primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		if (serverResponse.equals("fail")) {
-			System.out.println("Fail login");
 
-		}
+	}
+
+	public static void main(String[] args) {
+		launch(args);
 	}
 }
