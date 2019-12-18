@@ -8,26 +8,39 @@ import dao.UserDAO;
 import model.User;
 
 
-public class UserService {
+public class UserService 
+{
 	private UserDAO userDAO;
 
-	public UserService() {
-		try {
+	public UserService() 
+	{
+		try 
+		{
 			userDAO = new UserDAO(Persistence.createEntityManagerFactory("WordCount"));
-		} catch (Exception ex) {
+		} 
+		catch (Exception ex) 
+		{
 			System.out.println(ex);
 		}
 	}
-
-	public void addFile(User c) {
+   
+	public User findUser(String username) 
+	{
+		return userDAO.find(username);
+	}
+	
+	public void addFile(User c) 
+	{
 		userDAO.create(c);
 	}
 
-	public void updateFile(User u) {
+	public void updateFile(User u)
+	{
 		userDAO.update(u);
 	}
 
-	public List<User> getAllCategories() {
+	public List<User> getAllUsers() 
+	{
 		return userDAO.findAll();
 	}
 }

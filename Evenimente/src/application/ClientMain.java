@@ -1,9 +1,5 @@
 package application;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,7 +16,7 @@ public class ClientMain extends Application {
 			Parent root = FXMLLoader.load(getClass().getResource("../fxml/LogInPage.fxml"));
 
 			Scene scene = new Scene(root, 400, 400);
-
+			primaryStage.setTitle("FXML Welcome");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
